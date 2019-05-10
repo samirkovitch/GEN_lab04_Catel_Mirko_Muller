@@ -13,15 +13,11 @@ public class Orders {
         return orders.size();
     }
 
-    public Order getOrder(int i) {
-        return orders.get(i);
-    }
-
     public String getContents() {
         StringBuffer sb = new StringBuffer("{\"orders\": [");
 
         for (int i = 0; i < getOrdersCount(); i++) {
-            Order order = getOrder(i);
+            Order order = orders.get(i);
             sb.append("{\"id\": " + order.getOrderId() + ", \"products\": [");
 
             for (int j = 0; j < order.getProductsCount(); j++) {
