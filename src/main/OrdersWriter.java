@@ -9,5 +9,4 @@ public class OrdersWriter {
     public String getContents(){
         return orders.getContents();
     }
-
 }

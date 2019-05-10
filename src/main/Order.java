@@ -26,5 +26,4 @@ public class Order {
 
         sb.append("]}, ");
     }
-
 }

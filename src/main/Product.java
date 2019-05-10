@@ -33,6 +33,6 @@ public class Product {
         L,
         XL,
         XXL,
-        INVALID;
+        INVALID
     }
 }
