@@ -45,10 +45,6 @@ public class Product {
         return currency;
     }
 
-    public String getSizeFor() {
-        return size.toString();
-    }
-
     public String getColorFor() {
         switch (getColor()) {
             case 1:
