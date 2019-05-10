@@ -31,7 +31,7 @@ public class Order {
         for (int j = 0; j < getProductsCount(); j++) {
             Product product = getProduct(j);
 
-            getContentsProduct(sb, product);
+            product.getContents(sb);
         }
 
         if (getProductsCount() > 0) {
@@ -41,13 +41,4 @@ public class Order {
         sb.append("]}, ");
     }
 
-    private void getContentsProduct(StringBuffer sb, Product product) {
-        sb.append("{\"code\": \"" + product.getCode() + "\", \"color\": \"" + product.getColor() + "\", ");
-
-        if (product.getSize() != Product.SIZE_NOT_APPLICABLE) {
-            sb.append("\"size\": \"" + product.getSize() + "\", ");
-        }
-
-        sb.append("\"price\": " + product.getPrice() + ", \"currency\": \"" + product.getCurrency() + "\"}, ");
-    }
 }

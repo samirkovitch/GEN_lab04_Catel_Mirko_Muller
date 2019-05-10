@@ -16,6 +16,16 @@ public class Product {
         this.currency = currency;
     }
 
+    public void getContents(StringBuffer sb) {
+        sb.append("{\"code\": \"" + getCode() + "\", \"color\": \"" + getColor() + "\", ");
+
+        if (getSize() != SIZE_NOT_APPLICABLE) {
+            sb.append("\"size\": \"" + getSize() + "\", ");
+        }
+
+        sb.append("\"price\": " + getPrice() + ", \"currency\": \"" + getCurrency() + "\"}, ");
+    }
+
     enum Size {
         XS,
         S,
