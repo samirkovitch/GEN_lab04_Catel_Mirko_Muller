@@ -6,4 +6,8 @@ public class OrdersWriter {
         this.orders = orders;
     }
 
+    public String getContents(){
+        return orders.getContents();
+    }
+
 }
