@@ -18,7 +18,7 @@ public class Orders {
 
         for (int i = 0; i < getOrdersCount(); i++) {
             Order order = orders.get(i);
-            getContentsOrder(sb, order);
+            order.getContents(sb);
         }
 
         if (getOrdersCount() > 0) {
@@ -28,25 +28,4 @@ public class Orders {
         return sb.append("]}").toString();
     }
 
-    private void getContentsOrder(StringBuffer sb, Order order) {
-        sb.append("{\"id\": " + order.getOrderId() + ", \"products\": [");
-
-        for (int j = 0; j < order.getProductsCount(); j++) {
-            Product product = order.getProduct(j);
-
-            sb.append("{\"code\": \"" + product.getCode() + "\", \"color\": \"" + product.getColor() + "\", ");
-
-            if (product.getSize() != Product.SIZE_NOT_APPLICABLE) {
-                sb.append("\"size\": \"" + product.getSize() + "\", ");
-            }
-
-            sb.append("\"price\": " + product.getPrice() + ", \"currency\": \"" + product.getCurrency() + "\"}, ");
-        }
-
-        if (order.getProductsCount() > 0) {
-            sb.delete(sb.length() - 2, sb.length());
-        }
-
-        sb.append("]}, ");
-    }
 }

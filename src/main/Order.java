@@ -24,4 +24,26 @@ public class Order {
     public void AddProduct(Product product) {
         products.add(product);
     }
+
+    public void getContents(StringBuffer sb) {
+        sb.append("{\"id\": " + getOrderId() + ", \"products\": [");
+
+        for (int j = 0; j < getProductsCount(); j++) {
+            Product product = getProduct(j);
+
+            sb.append("{\"code\": \"" + product.getCode() + "\", \"color\": \"" + product.getColor() + "\", ");
+
+            if (product.getSize() != Product.SIZE_NOT_APPLICABLE) {
+                sb.append("\"size\": \"" + product.getSize() + "\", ");
+            }
+
+            sb.append("\"price\": " + product.getPrice() + ", \"currency\": \"" + product.getCurrency() + "\"}, ");
+        }
+
+        if (getProductsCount() > 0) {
+            sb.delete(sb.length() - 2, sb.length());
+        }
+
+        sb.append("]}, ");
+    }
 }
