@@ -17,13 +17,13 @@ public class Product {
     }
 
     public void getContents(StringBuffer sb) {
-        sb.append("{\"code\": \"" + getCode() + "\", \"color\": \"" + getColor() + "\", ");
+        sb.append("{\"code\": \"" + code + "\", \"color\": \"" + color + "\", ");
 
-        if (getSize() != SIZE_NOT_APPLICABLE) {
-            sb.append("\"size\": \"" + getSize() + "\", ");
+        if (size != SIZE_NOT_APPLICABLE) {
+            sb.append("\"size\": \"" + size + "\", ");
         }
 
-        sb.append("\"price\": " + getPrice() + ", \"currency\": \"" + getCurrency() + "\"}, ");
+        sb.append("\"price\": " + price + ", \"currency\": \"" + currency + "\"}, ");
     }
 
     enum Size {
@@ -34,25 +34,5 @@ public class Product {
         XL,
         XXL,
         INVALID;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public Size getSize() {
-        return size;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public String getCurrency() {
-        return currency;
     }
 }
