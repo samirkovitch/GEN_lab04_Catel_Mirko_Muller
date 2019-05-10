@@ -1,7 +1,7 @@
 import model.*;
 
 public class Product {
-    public static final Size SIZE_NOT_APPLICABLE = Size.INVALID;
+    private static final Size SIZE_NOT_APPLICABLE = Size.INVALID;
     private String code;
     private Color color;
     private Size size;
@@ -17,16 +17,16 @@ public class Product {
     }
 
     public void getContents(StringBuffer sb) {
-        sb.append("{\"code\": \"" + code + "\", \"color\": \"" + color + "\", ");
+        sb.append("{\"code\": \"").append(code).append("\", \"color\": \"").append(color).append("\", ");
 
         if (size != SIZE_NOT_APPLICABLE) {
-            sb.append("\"size\": \"" + size + "\", ");
+            sb.append("\"size\": \"").append(size).append("\", ");
         }
 
-        sb.append("\"price\": " + price + ", \"currency\": \"" + currency + "\"}, ");
+        sb.append("\"price\": ").append(price).append(", \"currency\": \"").append(currency).append("\"}, ");
     }
 
-    enum Size {
+    public enum Size {
         XS,
         S,
         M,

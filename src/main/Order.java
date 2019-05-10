@@ -14,10 +14,10 @@ public class Order {
     }
 
     public void getContents(StringBuffer sb) {
-        sb.append("{\"id\": " + id + ", \"products\": [");
+        sb.append("{\"id\": ").append(id).append(", \"products\": [");
 
-        for (int j = 0; j < products.size(); j++) {
-            products.get(j).getContents(sb);
+        for (Product product : products) {
+            product.getContents(sb);
         }
 
         if (products.size() > 0) {
